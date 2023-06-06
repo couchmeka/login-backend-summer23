@@ -15,6 +15,8 @@ router.get('/login-test', function(req, res) {
 
 router.post('/login', usersController.login)
 
+//add route for register
+
 
 
 module.exports = router;
