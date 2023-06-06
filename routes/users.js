@@ -7,8 +7,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', function(req, res) {
+  console.log(req.body)
   res.send({
-    username: 'Janet'
+    username: req.body.username
   })
 })
 
