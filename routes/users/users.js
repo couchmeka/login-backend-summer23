@@ -13,7 +13,7 @@ router.get('/login-test', function(req, res) {
   })
 })
 
-router.get('/login', usersController.login)
+router.post('/login', usersController.login)
 
 
 
