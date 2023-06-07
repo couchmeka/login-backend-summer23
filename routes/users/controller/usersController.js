@@ -32,7 +32,12 @@ module.exports = {
         } catch (error) {
             res.status(error.status).json('Error!!')
         }
+    },
+    register: async (req, res) => {
+       res.status(200).json({
+            message: `Successfully Registered ${req.body.username}`
+        }) 
     }
+    
 
-    // add controller function object
 }
