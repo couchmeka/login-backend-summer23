@@ -8,6 +8,8 @@
 //     login
 // }
 
+const { createUser } = require('./usersHelper')
+
 module.exports = {
     login: async (req, res) => {
         try {
@@ -35,9 +37,16 @@ module.exports = {
         }
     },
     register: async (req, res) => {
-       res.status(200).json({
-            message: `Successfully Registered ${req.body.username}`
-        }) 
+
+        let newUser = await createUser(req.body)
+        
+        // hash password
+        let savedUser = await newUser.save()
+
+        res.status(200).json({
+                userObj: savedUser,
+                message: "Successfully Registered"
+            }) 
     }
     
 
