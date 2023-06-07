@@ -1,4 +1,7 @@
 const User = require('../model/User')
+const bcrypt = require('bcrypt')
+
+const saltRounds = 10
 
 const createUser = (params) => {
     let newUser = new User({
@@ -8,4 +11,12 @@ const createUser = (params) => {
     return newUser
 }
 
-module.exports = { createUser }
+const hashPassword = (password) => {
+    let hashedPassword = bcrypt.hash(password, saltRounds)
+    return hashedPassword
+    
+    // or
+    // return bcrypt.hash(password, saltRounds)
+}
+
+module.exports = { createUser, hashPassword }
