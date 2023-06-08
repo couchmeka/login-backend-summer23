@@ -34,7 +34,6 @@ module.exports = {
 
             res.status(200).json({
                 username: req.body.username,
-                password: req.body.password,
                 message: "Successful Login!!",
                 token: token
             })  
