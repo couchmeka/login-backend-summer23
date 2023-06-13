@@ -93,7 +93,6 @@ module.exports = {
         //     token: token
         // })
 
-
         res.status(200).json({
             username: foundUser.username,
             message: "Successful Token Login!!"
