@@ -99,6 +99,16 @@ module.exports = {
         })
 
 
+    },
+    deleteUser: async (req, res) => {
+        try {
+            let foundUser = await User.findByIdAndDelete(req.decoded.id)
+            // console.log(foundUser)
+            res.send(true)
+        } catch (error) {
+            res.send(false)
+        }
+        
     }
     
 
